@@ -3,7 +3,8 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   -- bootstrap lazy.nvim
   -- stylua: ignore
-  vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
+  vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable",
+    lazypath })
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
@@ -27,7 +28,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
+  install = { colorscheme = { "onedark", "habamax" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
@@ -45,3 +46,37 @@ require("lazy").setup({
     },
   },
 })
+
+
+
+local ignore_filetypes = { 'neo-tree' }
+local ignore_buftypes = { 'nofile', 'prompt', 'popup' }
+
+local augroup =
+    vim.api.nvim_create_augroup('FocusDisable', { clear = true })
+
+vim.api.nvim_create_autocmd('WinEnter', {
+  group = augroup,
+  callback = function(_)
+    if vim.tbl_contains(ignore_buftypes, vim.bo.buftype)
+    then
+      vim.w.focus_disable = true
+    else
+      vim.w.focus_disable = false
+    end
+  end,
+  desc = 'Disable focus autoresize for BufType',
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  group = augroup,
+  callback = function(_)
+    if vim.tbl_contains(ignore_filetypes, vim.bo.filetype) then
+      vim.b.focus_disable = true
+    else
+      vim.b.focus_disable = false
+    end
+  end,
+  desc = 'Disable focus autoresize for FileType',
+})
+vim.g.blamer_enabled = true
