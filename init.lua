@@ -54,7 +54,8 @@ require("neotest").setup({
     },
 })
 
-local ayu_dark_lua_line = require 'lualine.themes.ayu_dark'
+local ayu_dark_lua_line = require 'lualine.themes.ayu_mirage'
+ayu_dark_lua_line.normal.c.bg = 'None'
 
 require('lualine').setup {
     options = { theme = ayu_dark_lua_line },
