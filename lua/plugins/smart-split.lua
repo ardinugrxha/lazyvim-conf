@@ -10,4 +10,5 @@ return {
     {
         "APZelos/blamer.nvim"
     },
+    { "EdenEast/nightfox.nvim" } -- lazy
 }

@@ -37,6 +37,7 @@ require("neo-tree").setup({
     }
 })
 require('transparent').clear_prefix('NeoTree')
+
 require("neotest").setup({
     adapters = {
         require("neotest-python")({
@@ -53,4 +54,9 @@ require("neotest").setup({
     },
 })
 
+local ayu_dark_lua_line = require 'lualine.themes.ayu_dark'
+
+require('lualine').setup {
+    options = { theme = ayu_dark_lua_line },
+}
 vim.lsp.inlay_hint.enable(true)
