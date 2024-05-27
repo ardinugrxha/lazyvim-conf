@@ -8,18 +8,18 @@ vim.api.nvim_set_keymap("x", "<leader>p", '"_dP', { noremap = true, silent = tru
 
 vim.api.nvim_set_keymap('n', '<S-s>', '<S-$>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<S-a>', '<S-^>', { noremap = true })
--- Map Shift + $ to Shift + s
-vim.api.nvim_set_keymap('n', '<S-$>', '<S-s>', { noremap = true })
--- Map Shift + ^ to Shift + a
-vim.api.nvim_set_keymap('n', '<S-^>', '<S-a>', { noremap = true })
+-- -- Map Shift + $ to Shift + s
+-- vim.api.nvim_set_keymap('n', '<S-$>', '<S-s>', { noremap = true })
+-- -- Map Shift + ^ to Shift + a
+-- vim.api.nvim_set_keymap('n', '<S-^>', '<S-a>', { noremap = true })
 
 vim.api.nvim_set_keymap("n", "d", '"_d', { noremap = true, silent = true })
 
--- Map s to w
-vim.api.nvim_set_keymap('n', 's', 'w', { noremap = true, silent = true })
+-- -- Map s to w
+-- vim.api.nvim_set_keymap('n', 's', 'w', { noremap = true, silent = true })
 
--- Map a to b
-vim.api.nvim_set_keymap('n', 'a', 'b', { noremap = true, silent = true })
+-- -- Map a to b
+-- vim.api.nvim_set_keymap('n', 'a', 'b', { noremap = true, silent = true })
 
 vim.keymap.set("n", "<space>fb", ":Telescope file_browser<CR>")
 vim.opt.mouse = ""
