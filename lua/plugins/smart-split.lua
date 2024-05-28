@@ -10,5 +10,11 @@ return {
     {
         "APZelos/blamer.nvim"
     },
-    { "EdenEast/nightfox.nvim" } -- lazy
+    {
+        "EdenEast/nightfox.nvim"
+    },
+    {
+        'nvim-pack/nvim-spectre'
+    }
+
 }
