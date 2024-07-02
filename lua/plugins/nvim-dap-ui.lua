@@ -199,44 +199,40 @@ return {
                                 close = { "q", "<Esc>" },
                             },
                         },
-                        -- layouts = {
-                        --     {
-                        --         elements = {
-                        --             {
-                        --                 id = "scopes",
-                        --                 size = 0.25,
-                        --             },
-                        --             {
-                        --                 id = "breakpoints",
-                        --                 size = 0.25,
-                        --             },
-                        --             {
-                        --                 id = "stacks",
-                        --                 size = 0.25,
-                        --             },
-                        --             {
-                        --                 id = "watches",
-                        --                 size = 0.25,
-                        --             },
-                        --         },
-                        --         position = "right",
-                        --         size = 40,
-                        --     },
-                        --     {
-                        --         elements = {
-                        --             {
-                        --                 id = "repl",
-                        --                 size = 0.5,
-                        --             },
-                        --             {
-                        --                 id = "console",
-                        --                 size = 0.5,
-                        --             },
-                        --         },
-                        --         position = "bottom",
-                        --         size = 10,
-                        --     },
-                        -- },
+                        layouts = {
+                            {
+                                elements = {
+                                    {
+                                        id = "scopes",
+                                        size = 0.25,
+                                    },
+                                    {
+                                        id = "breakpoints",
+                                        size = 0.25,
+                                    },
+                                    {
+                                        id = "stacks",
+                                        size = 0.25,
+                                    },
+                                    {
+                                        id = "watches",
+                                        size = 0.25,
+                                    },
+                                    {
+                                        id = "console",
+                                        size = 10,
+                                    },
+                                    {
+                                        id = "repl",
+                                        size = 10,
+                                    },
+
+                                },
+                                position = "right",
+                                size = 25,
+                            },
+
+                        },
                         expand_lines = vim.fn.has "nvim-0.7" == 1,
                     }
                 end,
