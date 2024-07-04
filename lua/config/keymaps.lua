@@ -28,7 +28,7 @@ vim.keymap.set(
   "n",
   "<leader>f/",
   ':lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>',
-  { noremap = true, desc = "Find word current buffer" }
+  { noremap = true, desc = "Find word current buffer", silent = true }
 )
 
 vim.keymap.set(
@@ -37,11 +37,6 @@ vim.keymap.set(
   ':lua require("telescope.builtin").live_grep()<CR>',
   { noremap = true, desc = "Find words" }
 )
-
-vim.keymap.set("n", "<space>r", ':lua require("dbee").toggle()<CR>', { noremap = true, desc = "Open DBE UI" })
-
--- Check if "dbee" is toggled on
--- Execute SQL query
 
 -- vim.keymap.set('n', '<C-CR>', ':<CMD> lua require("dbee").execute(vim.api.nvim_get_current_line())<CR>')
 -- Set NeoTree position to float
