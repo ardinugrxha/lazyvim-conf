@@ -37,6 +37,7 @@ require("neo-tree").setup({
   },
 })
 require("transparent").clear_prefix("NeoTree")
+require("transparent").clear_prefix("trouble")
 
 require("neotest").setup({
   adapters = {
