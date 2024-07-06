@@ -190,7 +190,11 @@ return {
         opts = { floating = { border = "rounded" } },
         dependencies = { "mxsdev/nvim-dap-vscode-js" },
         config = function()
-          local dapui = require("dapui")
+          local dap, dapui = require("dap"), require("dapui")
+          dap.listeners.before.launch.dapui_config = function()
+            dapui.open()
+          end
+
           dapui.setup({
             floating = {
               border = "single",
