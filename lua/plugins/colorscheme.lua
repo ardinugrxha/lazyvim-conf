@@ -1,17 +1,17 @@
 return {
-    -- add gruvbox
-    {
-        "navarasu/onedark.nvim",
-        opts = {
-            style = "darker",
-        }
+  -- add gruvbox
+  {
+    "navarasu/onedark.nvim",
+    opts = {
+      style = "cool",
     },
+  },
 
-    -- Configure LazyVim to load gruvbox
-    {
-        "LazyVim/LazyVim",
-        opts = {
-            colorscheme = "onedark",
-        },
+  -- Configure LazyVim to load gruvbox
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "onedark",
     },
+  },
 }

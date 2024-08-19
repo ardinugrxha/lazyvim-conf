@@ -7,8 +7,8 @@ require("focus").setup({
     enable = true, -- Enable or disable auto-resizing of splits
     width = 0, -- Force width for the focused window
     height = 0, -- Force height for the focused window
-    minwidth = 50, -- Force minimum width for the unfocused window
-    minheight = -20, -- Force minimum height for the unfocused window
+    minwidth = 65, -- Force minimum width for the unfocused window
+    minheight = 0, -- Force minimum height for the unfocused window
     height_quickfix = 0, -- Set the height of quickfix panel
   },
   split = {
@@ -34,10 +34,12 @@ require("focus").setup({
 require("neo-tree").setup({
   window = {
     position = "left",
+    width = 60,
   },
 })
 require("transparent").clear_prefix("NeoTree")
 require("transparent").clear_prefix("trouble")
+require("transparent").clear_prefix("treesitter-context")
 
 require("neotest").setup({
   adapters = {
@@ -64,7 +66,7 @@ require("lualine").setup({
 vim.opt.relativenumber = false
 vim.lsp.inlay_hint.enable(true)
 
-local ignore_filetypes = { "neo-tree" }
+local ignore_filetypes = { "neo-tree", "dap-repl", "dapui_console" }
 
 local augroup = vim.api.nvim_create_augroup("FocusDisable", { clear = true })
 
@@ -79,3 +81,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
   desc = "Disable focus autoresize for FileType",
 })
+
+local bufnr = vim.api.nvim_get_current_buf() -- Get the current buffer number
+local filetype = vim.api.nvim_buf_get_option(bufnr, "filetype")
+print("Current filetype: " .. filetype)
