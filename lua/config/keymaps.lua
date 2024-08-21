@@ -57,3 +57,6 @@ vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search(
 vim.keymap.set("n", "<leader>rn", function()
   return ":IncRename " .. vim.fn.expand("<cword>")
 end, { expr = true })
+
+-- Replace this with your preferred keybinding
+-- vim.api.nvim_set_keymap("n", "<leader>e", ':lua require("oil").open()<CR>', { noremap = true, silent = true })

@@ -5,11 +5,12 @@ require("focus").setup({
   commands = true, -- Create Focus commands
   autoresize = {
     enable = true, -- Enable or disable auto-resizing of splits
-    width = 0, -- Force width for the focused window
-    height = 0, -- Force height for the focused window
-    minwidth = 65, -- Force minimum width for the unfocused window
-    minheight = 0, -- Force minimum height for the unfocused window
-    height_quickfix = 0, -- Set the height of quickfix panel
+    width = 123, -- Default width for vertical splits
+    height = 69, -- Default height for horizontal splits
+    minwidth = 25, -- Minimum width for vertical splits
+    minheight = 0, -- Minimum height for horizontal splits
+    maxwidth = 200, -- Maximum width for vertical splits
+    maxheight = 80,
   },
   split = {
     bufnew = false, -- Create blank buffer for new split windows
@@ -31,12 +32,11 @@ require("focus").setup({
     winhighlight = false, -- Auto highlighting for focussed/unfocussed windows
   },
 })
-require("neo-tree").setup({
-  window = {
-    position = "left",
-    width = 60,
-  },
-})
+--
+require("edgy").setup()
+require("outline").setup()
+
+require("transparent").clear_prefix("edgy")
 require("transparent").clear_prefix("NeoTree")
 require("transparent").clear_prefix("trouble")
 require("transparent").clear_prefix("treesitter-context")
@@ -66,7 +66,7 @@ require("lualine").setup({
 vim.opt.relativenumber = false
 vim.lsp.inlay_hint.enable(true)
 
-local ignore_filetypes = { "neo-tree", "dap-repl", "dapui_console" }
+local ignore_filetypes = { "oil", "edgy", "neo-tree", "Outline", "trouble" }
 
 local augroup = vim.api.nvim_create_augroup("FocusDisable", { clear = true })
 

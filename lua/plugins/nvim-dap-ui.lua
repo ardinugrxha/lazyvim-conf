@@ -196,50 +196,6 @@ return {
           end
 
           dapui.setup({
-            floating = {
-              border = "single",
-              mappings = {
-                close = { "q", "<Esc>" },
-              },
-            },
-            layouts = {
-              {
-                elements = {
-                  {
-                    id = "scopes",
-                    size = 0.25,
-                  },
-                  {
-                    id = "breakpoints",
-                    size = 0.35,
-                  },
-                  {
-                    id = "stacks",
-                    size = 0.25,
-                  },
-                  {
-                    id = "watches",
-                    size = 0.25,
-                  },
-                },
-                position = "right",
-                size = 10,
-              },
-              {
-                elements = {
-                  {
-                    id = "repl",
-                    size = 0.25,
-                  },
-                  {
-                    id = "console",
-                    size = 0.25,
-                  },
-                },
-                position = "bottom",
-                size = 10,
-              },
-            },
             expand_lines = vim.fn.has("nvim-0.7") == 1,
           })
         end,
