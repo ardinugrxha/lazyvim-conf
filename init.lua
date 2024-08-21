@@ -84,4 +84,12 @@ vim.api.nvim_create_autocmd("FileType", {
 
 local bufnr = vim.api.nvim_get_current_buf() -- Get the current buffer number
 local filetype = vim.api.nvim_buf_get_option(bufnr, "filetype")
-print("Current filetype: " .. filetype)
+
+-- Automatically execute commands after initialization with delay
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    -- Execute commands directly
+    vim.cmd('lua require("dapui").toggle()')
+    vim.cmd('lua require("edgy").toggle()')
+  end,
+})
