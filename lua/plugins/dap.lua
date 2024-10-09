@@ -10,7 +10,6 @@ return {
     "mfussenegger/nvim-dap",
     config = function()
       local dap = require("dap")
-
       for _, language in ipairs(js_based_languages) do
         dap.configurations[language] = {
           -- Debug single nodejs files

@@ -7,3 +7,4 @@ vim.api.nvim_set_keymap("x", "<leader>p", '"_dP', { noremap = true, silent = tru
 vim.api.nvim_set_keymap("n", "<S-s>", "<S-$>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<S-a>", "<S-^>", { noremap = true })
 vim.api.nvim_set_keymap("n", "d", '"_d', { noremap = true, silent = true })
+vim.keymap.set("n", "<C-d>", "mciw*<Cmd>nohl<CR>", { remap = true })

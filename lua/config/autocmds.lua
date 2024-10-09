@@ -13,3 +13,7 @@ require("hbac").setup({
     -- See #telescope-configuration below
   },
 })
+require("transparent").clear_prefix("BufferLine")
+require("transparent").clear_prefix("neotree")
+require("transparent").clear_prefix("trouble")
+require("transparent").clear_prefix("edgy")
