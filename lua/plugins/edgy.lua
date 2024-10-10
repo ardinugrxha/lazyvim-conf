@@ -56,10 +56,10 @@ return {
       },
       left = {
         { title = "Neotest Summary", ft = "neotest-summary" },
+        { title = "Grug Far", ft = "grug-far", size = { width = 0.4 } },
         -- "neo-tree",
       },
       right = {
-        { title = "Grug Far", ft = "grug-far", size = { width = 0.4 } },
         {
           title = "DAP UI Scopes",
           ft = "dapui_scopes",
