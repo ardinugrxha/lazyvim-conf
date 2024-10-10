@@ -14,6 +14,6 @@ require("hbac").setup({
   },
 })
 require("transparent").clear_prefix("BufferLine")
-require("transparent").clear_prefix("neotree")
+require("transparent").clear_prefix("NeoTree")
 require("transparent").clear_prefix("trouble")
 require("transparent").clear_prefix("edgy")
