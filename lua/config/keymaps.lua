@@ -9,17 +9,9 @@ vim.api.nvim_set_keymap("n", "<S-a>", "<S-^>", { noremap = true })
 vim.api.nvim_set_keymap("n", "d", '"_d', { noremap = true, silent = true })
 vim.keymap.set("n", "<C-d>", "mciw*<Cmd>nohl<CR>", { remap = true })
 
-local api = vim.api
-local function toggle_oil_float()
-  for _, win in pairs(api.nvim_list_wins()) do
-    local buf = api.nvim_win_get_buf(win)
-    if api.nvim_buf_get_name(buf):match("^oil://") then
-      api.nvim_win_close(win, true)
-      return
-    end
-  end
-
-  vim.cmd("Oil --float")
-end
-
-vim.keymap.set("n", "<leader>e", toggle_oil_float, { desc = "Toggle Oil float" })
+vim.keymap.set("n", "<leader>s/", function()
+  require("grug-far").open({
+    prefills = { paths = vim.fn.expand("%") },
+    replace = true,
+  })
+end, { desc = "Search and replace in current buffer", noremap = true, silent = true })
