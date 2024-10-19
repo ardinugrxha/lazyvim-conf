@@ -4,6 +4,28 @@ return {
     "navarasu/onedark.nvim",
     opts = {
       style = "cool",
+
+      colors = {
+        sky = "#56C2EA", -- redefine an existing color
+        cloud = "#59e0f8",
+        greener = "#26c98e",
+      },
+      highlights = {
+        ["@keyword"] = { fg = "$sky" },
+        ["@keyword.function"] = { fg = "$sky" },
+        ["@keyword.conditional"] = { fg = "$sky" },
+        ["@keyword.directive"] = { fg = "$sky" },
+        ["@keyword.exception"] = { fg = "$sky" },
+        ["@keyword.import"] = { fg = "$sky" },
+        ["@keyword.operator"] = { fg = "$sky" },
+        ["@keyword.repeat"] = { fg = "$sky" },
+        ["@variable.parameter"] = { fg = "$greener" },
+        ["@parameter"] = { fg = "$greener" },
+        ["@variable.builtin"] = { fg = "$sky" },
+        ["@boolean"] = { fg = "$yellow" },
+        ["@number"] = { fg = "$yellow" },
+        ["@number.float"] = { fg = "$yellow" },
+      },
     },
   },
 
