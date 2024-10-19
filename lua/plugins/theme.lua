@@ -25,6 +25,7 @@ return {
         ["@boolean"] = { fg = "$yellow" },
         ["@number"] = { fg = "$yellow" },
         ["@number.float"] = { fg = "$yellow" },
+        ["@type.builtin"] = { fg = "$sky" },
       },
     },
   },
