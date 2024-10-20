@@ -18,8 +18,6 @@ return {
         ["@keyword.import"] = { fg = "$sky" },
         ["@keyword.operator"] = { fg = "$sky" },
         ["@keyword.repeat"] = { fg = "$sky" },
-        ["@variable.parameter"] = { fg = "$greener" },
-        ["@parameter"] = { fg = "$greener" },
         ["@variable.builtin"] = { fg = "$sky" },
         ["@boolean"] = { fg = "$yellow" },
         ["@number"] = { fg = "$yellow" },
