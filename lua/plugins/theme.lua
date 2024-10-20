@@ -12,7 +12,6 @@ return {
       },
       highlights = {
         ["@keyword"] = { fg = "$sky" },
-        ["@keyword.function"] = { fg = "$sky" },
         ["@keyword.conditional"] = { fg = "$sky" },
         ["@keyword.directive"] = { fg = "$sky" },
         ["@keyword.exception"] = { fg = "$sky" },

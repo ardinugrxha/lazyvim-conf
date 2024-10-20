@@ -26,7 +26,7 @@ return {
         { ft = "qf", title = "QuickFix" },
         {
           ft = "help",
-          size = { height = 20, width = 40 },
+          size = { height = 20 },
           -- don't open help files in edgy that we're editing
           filter = function(buf)
             return vim.bo[buf].buftype == "help"
@@ -53,13 +53,11 @@ return {
         },
         -- { title = "Spectre", ft = "spectre_panel", size = { height = 0.4 } },
         { title = "Neotest Output", ft = "neotest-output-panel", size = { height = 15 } },
+        { title = "Neotest Summary", ft = "neotest-summary" },
       },
       left = {
-        { title = "Neotest Summary", ft = "neotest-summary" },
         { title = "Grug Far", ft = "grug-far", size = { width = 0.4 } },
-        -- "neo-tree",
-      },
-      right = {
+
         {
           title = "DAP UI Scopes",
           ft = "dapui_scopes",
@@ -100,7 +98,9 @@ return {
           pinned = true,
           open = "DapuiOpenWatches",
         },
+        -- "neo-tree",
       },
+      right = {},
       keys = {
         -- increase width
         ["<c-Right>"] = function(win)
@@ -120,6 +120,20 @@ return {
         end,
       },
     }
+
+    for _, pos in ipairs({ "top", "bottom", "left", "right" }) do
+      opts[pos] = opts[pos] or {}
+      table.insert(opts[pos], {
+        ft = "trouble",
+        filter = function(_buf, win)
+          return vim.w[win].trouble
+            and vim.w[win].trouble.position == pos
+            and vim.w[win].trouble.type == "split"
+            and vim.w[win].trouble.relative == "editor"
+            and not vim.w[win].trouble_preview
+        end,
+      })
+    end
     return opts
   end,
 }

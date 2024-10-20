@@ -15,3 +15,12 @@ vim.keymap.set("n", "<leader>s/", function()
     replace = true,
   })
 end, { desc = "Search and replace in current buffer", noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>e", function()
+  dapui.close()
+end, { remap = true, silent = true })
+
+vim.keymap.set("n", "<leader>e", function()
+  local oil = require("oil")
+  oil.toggle_float() -- Open the Oil float if it's closed
+end, { noremap = true, silent = true })
