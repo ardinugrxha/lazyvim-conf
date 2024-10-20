@@ -4,14 +4,15 @@ return {
     "navarasu/onedark.nvim",
     opts = {
       style = "cool",
-
       colors = {
-        sky = "#56C2EA", -- redefine an existing color
+        sky = "#0298db", -- redefine an existing color
         cloud = "#59e0f8",
         greener = "#26c98e",
       },
       highlights = {
         ["@keyword"] = { fg = "$sky" },
+        ["@function"] = { fg = "$greener" },
+        ["@function.method"] = { fg = "$greener" },
         ["@keyword.conditional"] = { fg = "$sky" },
         ["@keyword.directive"] = { fg = "$sky" },
         ["@keyword.exception"] = { fg = "$sky" },
@@ -37,7 +38,6 @@ return {
       transparent = true
     end,
   },
-
   {
     "LazyVim/LazyVim",
     opts = {
