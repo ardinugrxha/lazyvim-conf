@@ -11,8 +11,6 @@ return {
       },
       highlights = {
         ["@keyword"] = { fg = "$sky" },
-        ["@function"] = { fg = "$greener" },
-        ["@function.method"] = { fg = "$greener" },
         ["@keyword.conditional"] = { fg = "$sky" },
         ["@keyword.directive"] = { fg = "$sky" },
         ["@keyword.exception"] = { fg = "$sky" },
@@ -24,7 +22,6 @@ return {
         ["@number"] = { fg = "$yellow" },
         ["@number.float"] = { fg = "$yellow" },
         ["@type.builtin"] = { fg = "$sky" },
-        ["@method"] = { fg = "$greener" },
       },
     },
   },
