@@ -24,6 +24,7 @@ return {
         ["@number"] = { fg = "$yellow" },
         ["@number.float"] = { fg = "$yellow" },
         ["@type.builtin"] = { fg = "$sky" },
+        ["@method"] = { fg = "$greener" },
       },
     },
   },
