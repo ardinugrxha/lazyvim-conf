@@ -22,16 +22,7 @@ return {
             return vim.api.nvim_win_get_config(win).relative == ""
           end,
         },
-        "Trouble",
         { ft = "qf", title = "QuickFix" },
-        {
-          ft = "help",
-          size = { height = 20 },
-          -- don't open help files in edgy that we're editing
-          filter = function(buf)
-            return vim.bo[buf].buftype == "help"
-          end,
-        },
         {
           title = "DAP UI REPL",
           ft = "dap-repl",
@@ -100,7 +91,16 @@ return {
         },
         -- "neo-tree",
       },
-      right = {},
+      right = {
+        {
+          ft = "help",
+          size = { height = 20 },
+          -- don't open help files in edgy that we're editing
+          filter = function(buf)
+            return vim.bo[buf].buftype == "help"
+          end,
+        },
+      },
       keys = {
         -- increase width
         ["<c-Right>"] = function(win)
@@ -121,19 +121,6 @@ return {
       },
     }
 
-    for _, pos in ipairs({ "top", "bottom", "left", "right" }) do
-      opts[pos] = opts[pos] or {}
-      table.insert(opts[pos], {
-        ft = "trouble",
-        filter = function(_buf, win)
-          return vim.w[win].trouble
-            and vim.w[win].trouble.position == pos
-            and vim.w[win].trouble.type == "split"
-            and vim.w[win].trouble.relative == "editor"
-            and not vim.w[win].trouble_preview
-        end,
-      })
-    end
     return opts
   end,
 }
